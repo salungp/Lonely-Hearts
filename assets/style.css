@@ -1,0 +1,209 @@
+@font-face {
+    font-family: 'VCR OSD Mono';
+    src: url('font-style.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FFF5DF;
+    font-family: 'VCR OSD Mono', 'font-style', 'Arial';
+    background-image: url('paper.png');
+    color: #384B49;
+}
+
+.bottom {
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.lh-header {
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.lh-header nav a {
+    height: 56px;
+    width: 100%;
+    background-color: #88A5A0;
+    border: 4px solid #5C7377;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.lh-header nav h2 {
+    font-size: 26px;
+    background-color: none;
+    color: #ffffff;
+    margin-bottom: 0 !important;
+    text-transform: capitalize;
+}
+
+.lh-header nav img {
+    width: 30px;
+    margin-right: 12px;
+}
+
+.lh-input {
+    width: 100%;
+    height: 56px;
+    border-radius: 4px;
+    border: 2px solid #384B49;
+    background-color: #FBF6EC;
+    font-size: 20px;
+    padding: 0 18px;
+    transition: .1s ease-in-out;
+    outline: none;
+}
+
+.lh-input:focus {
+    border-color: #A34D41;
+}
+
+.lh-input::placeholder {
+    color: #D1D3D9;
+}
+
+.lh-button {
+    height: 56px;
+    width: 100%;
+    border-radius: 4px;
+    border: 2px solid #384B49;
+    background-color: #F4DDAC;
+    color: #A34D41;
+    filter: blur(1);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.lh-button:hover {
+    background-color: #FAD587;
+}
+
+.back-button {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #384B49;
+    background-color: #FBF6EC;
+    border-radius: 4px;
+}
+
+.back-button img {
+    width: 24px;
+}
+
+.ad-title {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Merriweather';
+    font-weight: bold;
+}
+
+.ad-content {
+    padding: 20px 0;
+    border-top: 2px solid #384B49;
+    border-bottom: 2px solid #384B49;
+}
+
+.ad-content h3 {
+    font-family: 'Merriweather';
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+.ad-content p {
+    font-size: 16px;
+    line-height: 36px;
+    font-family: 'Merriweather';
+    text-align: center;
+}
+
+.lh-select {
+    width: 100%;
+    height: 56px;
+    border-radius: 4px;
+    border: 2px solid #384B49;
+    background-color: #FBF6EC;
+    font-size: 20px;
+    padding: 0 18px;
+    transition: .1s ease-in-out;
+    outline: none;
+}
+
+.lh-radio {
+    width: 100%;
+    height: 56px;
+    border: 2px solid #384B49;
+    background-color: #FBF6EC;
+    font-size: 20px;
+    padding: 0 18px;
+    transition: .1s ease-in-out;
+    outline: none;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.lh-radio input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.lh-radio:has(.lh-radio-input:checked) {
+    border-color: #D2605A;
+}
+
+.lh-radio input:checked ~ label {
+    color: #A34D41;
+}
+
+.lh-radio input:checked ~ .lh-radio-circle {
+    border-color: #D2605A;
+}
+
+.lh-radio-input {
+    outline: none;
+}
+
+.lh-radio-circle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #384B49;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 44px;
+    margin-right: 12px;
+}
+
+.lh-radio-circle::after {
+    content: "";
+    display: none;
+    width: 12px;
+    height: 12px;
+    background: #D2605A;
+    border-radius: 44px;
+}
+
+.lh-radio input:checked ~ .lh-radio-circle::after {
+    display: block;
+}
