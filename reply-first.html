@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lonely Hearts</title>
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+
+    <title>Lonely Hearts</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="lh-header">
+    <div class="container-sm">
+        <nav>
+            <a href="index.html">
+                <img src="assets/logo.svg" alt="Lonely hearts logo heart pixelated">
+                <h2>LONELY HEARTS</h2>
+            </a>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-sm">
+        <h2 style="margin-bottom: 24px; text-transform: uppercase;">I'll write it</h2>
+        <form action="ad-detail.html">
+            <div style="position: relative;">
+                <textarea class="lh-textarea" oninput="updateLHtextarea()" name="" id="lh-textarea" maxlength="100" placeholder="Write your own ad"></textarea>
+                <div class="lh-textarea-info">
+                    <span id="lh-textarea-info">0</span>/100
+                </div>
+            </div>
+
+            <div class="bottom">
+                <div class="container-sm">
+                    <a class="lh-button-secondary mb-3" href="#">Skip</a>
+                    <button class="lh-button">VIEW MESSAGE</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </main>
+
+  <footer>
+    
+  </footer>
+
+  <!-- bootstrap script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script>
+    function updateLHtextarea() {
+        const textarea = document.getElementById('lh-textarea');
+        const counter = document.getElementById('lh-textarea-info');
+        counter.textContent = textarea.value.length;
+    }
+
+    // initialize on load
+    document.addEventListener("DOMContentLoaded", updateLHtextarea);
+  </script>
+</body>
+</html>
