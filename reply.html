@@ -84,5 +84,22 @@
 
   <!-- bootstrap script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <script>
+    const hamburger = document.getElementById('lhHamburger');
+    const menu = document.getElementById('lhMobileMenu');
+
+    // Toggle menu
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent it from triggering the document click
+      menu.classList.toggle('active');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
