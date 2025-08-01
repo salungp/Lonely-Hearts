@@ -15,6 +15,61 @@ body, h1, p {
     color: #384B49;
 }
 
+.lh-header nav {
+    position: relative;
+}
+
+/* Hamburger menu */
+.lh-hamburger {
+    display: block;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 16px;
+    top: 9px;
+}
+
+.lh-hamburger span {
+    display: block;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Dropdown menu */
+.lh-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #FFF5DF;
+    position: absolute;
+    top: 52px;
+    width: 100%;
+    border: 4px solid #5C7377;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-radius: 4px;
+    
+}
+
+.lh-dropdown a {
+    padding: 1rem;
+    text-decoration: none;
+    color: #5C7377;
+    border-bottom: 4px solid #5C7377;
+    transition: .2s ease-in-out;
+}
+
+.lh-dropdown a:hover {
+    background-color: #FFEFCC;
+}
+
+/* Show dropdown when active */
+.lh-dropdown.active {
+    display: flex;
+}
+
 .bottom {
     width: 100%;
     padding: 20px 0;
@@ -30,6 +85,13 @@ body, h1, p {
 }
 
 .lh-header nav a {
+    text-decoration: none;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.lh-header nav {
     height: 56px;
     width: 100%;
     background-color: #88A5A0;
@@ -37,7 +99,7 @@ body, h1, p {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
+    position: relative;
 }
 
 .lh-header nav h2 {
