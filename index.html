@@ -53,11 +53,27 @@
         
         <h2 style="margin-bottom: 24px; text-align: center;">Enter PO box number</h2>
         <form action="ad-detail.html">
-            <input class="lh-input" type="text" placeholder="ex: PO BOX xxxx">
-            <div class="bottom">
-                <div class="container-sm">
-                    <button class="lh-button">VIEW MESSAGE</button>
-                </div>
+
+            <!-- PIN Input Container -->
+            <div class="pin-container d-flex mb-4">
+                <input type="text" class="lh-input pin-input-field" maxlength="1" data-index="0" inputmode="numeric">
+                <input type="text" class="lh-input pin-input-field" maxlength="1" data-index="1" inputmode="numeric">
+                <input type="text" class="lh-input pin-input-field" maxlength="1" data-index="2" inputmode="numeric">
+                <input type="text" class="lh-input pin-input-field" maxlength="1" data-index="3" inputmode="numeric">
+                <input type="text" class="lh-input pin-input-field" maxlength="1" data-index="4" inputmode="numeric">
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="d-grid gap-2 mb-3">
+                <button class="lh-button" id="submitBtn" disabled>
+                    <span class="spinner-border spinner-border-sm me-2 d-none" id="loadingSpinner"></span>
+                    View Message
+                </button>
+            </div>
+            
+            <!-- Message Container -->
+            <div class="message-container mt-3" id="messageContainer">
+                <div class="alert mb-0" id="messageAlert"></div>
             </div>
         </form>
     </div>

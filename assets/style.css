@@ -408,3 +408,102 @@ body, h1, p {
   .lh-option:hover {
     background-color: #ffe5d0;
   }
+
+  /* Custom PIN Input Styles - Namespace dengan .pin-verification untuk menghindari konflik */
+  .pin-verification .pin-input-field {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 2px solid #dee2e6;
+    border-radius: 0.5rem;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    outline: none;
+    caret-color: #0d6efd;
+}
+
+.pin-verification .pin-input-field:focus {
+    border-color: #0d6efd;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    transform: translateY(-2px);
+}
+
+.pin-verification .pin-input-field.filled {
+    border-color: #198754;
+    background-color: #f8fff9;
+}
+
+.pin-verification .pin-input-field.error {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+    animation: pinShake 0.5s ease-in-out;
+}
+
+@keyframes pinShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.pin-verification .pin-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.pin-verification .verification-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.pin-verification .btn-verify {
+    background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.pin-verification .btn-verify:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.3);
+}
+
+.pin-verification .btn-verify:disabled {
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.pin-verification .message-container {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.pin-verification .message-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+    .pin-verification .pin-input-field {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .pin-verification .pin-container {
+        gap: 0.5rem;
+    }
+}
+
+.pin-container .lh-input {
+    margin-left: 2%;
+    margin-right: 2%;
+}
