@@ -207,3 +207,31 @@ class BootstrapPinInput {
 document.addEventListener('DOMContentLoaded', () => {
     new BootstrapPinInput();
 });
+
+function getOrdinal(n) {
+    const s = ["th", "st", "nd", "rd"];
+    const v = n % 100;
+    return s[(v - 20) % 10] || s[v] || s[0];
+  }
+
+  function updateDate() {
+    const now = new Date();
+
+    const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    const dayName = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+    const year = now.getFullYear();
+
+    const formatted = `${dayName} ${date}${getOrdinal(date)} ${month} ${year}`;
+    document.getElementById("current-date").textContent = formatted;
+  }
+
+  // Initial run
+  updateDate();
+
+  // Optional: update every second (real-time)
+  setInterval(updateDate, 1000);

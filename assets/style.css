@@ -507,3 +507,12 @@ body, h1, p {
     margin-left: 2%;
     margin-right: 2%;
 }
+
+.lh-sub-header h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.lh-sub-header div img {
+    width: 24px;
+}
