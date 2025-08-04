@@ -187,11 +187,6 @@ class BootstrapPinInput {
     }
 }
 
-// Initialize setelah DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new BootstrapPinInput();
-});
-
 function getOrdinal(n) {
     const s = ["th", "st", "nd", "rd"];
     const v = n % 100;
@@ -244,9 +239,6 @@ function updateLHtextarea() {
     const counter = document.getElementById('lh-textarea-info');
     counter.textContent = textarea.value.length;
 }
-
-// initialize on load
-document.addEventListener("DOMContentLoaded", updateLHtextarea);
 
 // Toggle dropdown
 document.querySelectorAll('.lh-dropdown-button').forEach((btn) => {
