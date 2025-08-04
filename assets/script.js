@@ -219,3 +219,61 @@ function getOrdinal(n) {
 
   // Optional: update every second (real-time)
   setInterval(updateDate, 1000);
+
+
+// Navbar dropdown toggle menu
+const hamburger = document.getElementById('lhHamburger');
+const menu = document.getElementById('lhMobileMenu');
+
+// Toggle menu
+hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent it from triggering the document click
+    menu.classList.toggle('active');
+});
+
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+    menu.classList.remove('active');
+    }
+});
+
+// Textarea number character info
+function updateLHtextarea() {
+    const textarea = document.getElementById('lh-textarea');
+    const counter = document.getElementById('lh-textarea-info');
+    counter.textContent = textarea.value.length;
+}
+
+// initialize on load
+document.addEventListener("DOMContentLoaded", updateLHtextarea);
+
+// Toggle dropdown
+document.querySelectorAll('.lh-dropdown-button').forEach((btn) => {
+    btn.addEventListener('click', function (e) {
+        const wrap = this.parentElement;
+        document.querySelectorAll('.lh-dropdown-wrap').forEach((el) => {
+        if (el !== wrap) el.classList.remove('open');
+        });
+        wrap.classList.toggle('open');
+    });
+});
+
+// Select option
+document.querySelectorAll('.lh-option').forEach((option) => {
+    option.addEventListener('click', function () {
+        const wrap = this.closest('.lh-dropdown-wrap');
+        const btn = wrap.querySelector('.lh-dropdown-button');
+        btn.textContent = this.textContent;
+        wrap.classList.remove('open');
+    });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.lh-dropdown-wrap')) {
+        document.querySelectorAll('.lh-dropdown-wrap').forEach((el) => {
+        el.classList.remove('open');
+        });
+    }
+});
