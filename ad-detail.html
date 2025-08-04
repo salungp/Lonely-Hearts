@@ -73,16 +73,23 @@
           <div class="d-flex justify-content-center">
             <img src="assets/ad-image.png" alt="Ad image pixelated" class="ad-image" style="margin-bottom: 24px;">
           </div>
-          <p>Blue eyes, long legs, shorter patience for broke men. Three ex-husbands, zero regrets. Seeks wealthy gentlement who knows investments appreciate. GSOH about prenups. BOX No. 8888.</p>
-          <a class="ad-link" href="#">lonelyhearts.me/box/8888</a>
+          <p>Blue eyes, long legs, shorter patience for broke men. Three ex-husbands, zero regrets. Seeks wealthy gentlement who knows investments appreciate. <span class="lh-text-special" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GSOH means Good Sense of Humour (means they are funny :)">GSOH</span> about prenups. BOX No. 8888.</p>
+          <a class="ad-link" href="#"><b>lonelyhearts.me/box/8888</b></a>
         </div>
         
         <div class="bottom">
             <div class="container-sm">
-              <form action="reply.html">
-                <button class="lh-button">REPLY AD</button>
-              </form>
-                
+              <div class="d-flex" style="gap: 16px;">
+                <button class="lh-button-icon" style="background-color: #DD775A; border-color: #A34D41;">
+                  <img src="assets/heart.svg" class="lh-small-icon" alt="">
+                </button>
+                <form action="reply.html" style="width: 100%;">
+                  <button class="lh-button">REPLY AD</button>
+                </form>
+                <button class="lh-button-icon" style="background-color: #88A5A0; border-color: #5C7377;">
+                  <img src="assets/share.svg" class="lh-small-icon" alt="">
+                </button>
+              </div>
             </div>
         </div>
     </div>
@@ -95,5 +102,13 @@
   <!-- bootstrap script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <script src="assets/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
+  </script>
 </body>
 </html>
