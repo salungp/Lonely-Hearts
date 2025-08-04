@@ -48,8 +48,8 @@ body, h1, p {
     width: 100%;
     border: 4px solid #5C7377;
     border-top: none !important;
-    border-bottom: none !important;
     border-radius: 4px;
+    padding: 16px;
     
 }
 
@@ -57,8 +57,9 @@ body, h1, p {
     padding: 1rem;
     text-decoration: none;
     color: #5C7377;
-    border-bottom: 4px solid #5C7377;
+    border-bottom: 2px solid #5C7377;
     transition: .2s ease-in-out;
+    text-transform: uppercase;
 }
 
 .lh-dropdown a:hover {
