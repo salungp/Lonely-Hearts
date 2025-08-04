@@ -86,7 +86,7 @@
                 <form action="reply.html" style="width: 100%;">
                   <button class="lh-button">REPLY AD</button>
                 </form>
-                <button class="lh-button-icon" style="background-color: #88A5A0; border-color: #5C7377;">
+                <button class="lh-button-icon" id="share-button" style="background-color: #88A5A0; border-color: #5C7377;">
                   <img src="assets/share.svg" class="lh-small-icon" alt="">
                 </button>
               </div>
@@ -108,6 +108,23 @@
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl);
       });
+    });
+
+    document.getElementById('share-button').addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'Check this out!',
+            text: 'This is something cool I found.',
+            url: window.location.href
+          });
+          console.log('Content shared successfully!');
+        } catch (err) {
+          console.error('Sharing failed:', err);
+        }
+      } else {
+        alert('Sharing not supported on this device.');
+      }
     });
   </script>
 </body>
