@@ -504,9 +504,12 @@ body, h1, p {
     }
 }
 
-.pin-container .lh-input {
-    margin-left: 2%;
-    margin-right: 2%;
+.pin-container {
+    gap: 18px !important;
+}
+
+.pin-container > .lh-input {
+    flex: 1;
 }
 
 .lh-sub-header h3 {
