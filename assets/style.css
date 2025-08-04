@@ -521,3 +521,28 @@ body, h1, p {
 .lh-sub-header div img {
     width: 24px;
 }
+
+.lh-feed-card {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #D1D3D9;
+    background-color: #FBF6EC;
+    display: block !important;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.lh-feed-featured {
+    border-color: #DD775A;
+}
+
+.lh-feed-card h2 {
+    font-size: 18px;
+    font-family: 'Merriweather';
+    margin-bottom: 20px;
+    line-height: 180%;
+}
+
+.lh-small-icon {
+    width: 20px;
+}
