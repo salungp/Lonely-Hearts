@@ -325,6 +325,10 @@ body, h1, p {
     width: 0;
 }
 
+.lh-radio label {
+    width: 100%;
+}
+
 .lh-radio:has(.lh-radio-input:checked) {
     border-color: #D2605A;
 }
@@ -592,10 +596,6 @@ body, h1, p {
     font-size: 18px;
     color: #A34D41;
     padding: 16px;
-}
-
-.lh-cta-card {
-    
 }
 
 .lh-cta-card h3 {
