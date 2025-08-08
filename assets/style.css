@@ -610,3 +610,20 @@ body, h1, p {
     font-family: 'Merriweather';
     margin-bottom: 12px;
 }
+
+.lh-nav-button {
+    width: 32px;
+    height: 32px;
+    background-color: #5C7377;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lh-nav-button img {
+    margin: 0 !important;
+    width: 18px !important;
+}
