@@ -23,17 +23,6 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <!-- <header class="lh-header">
-    <div class="container-sm d-flex justify-content-between">
-            <a class="back-button" href="index.html">
-              <img src="./assets/back-button-icon.svg" alt="Back button icon">
-            </a>
-            <a class="back-button" href="#">
-              <img src="./assets/share.svg" alt="Back button icon">
-            </a>
-    </div>
-  </header> -->
-
   <header class="lh-header">
     <div class="container-sm">
         <nav>
@@ -71,10 +60,41 @@
         <div class="ad-content" style="margin-bottom: 150px;">
           <h2 class="ad-title" style="margin-bottom: 24px;">Patricia, 46, F, LONDON, semi-retired gold digger</h2>
           <div class="d-flex justify-content-center">
-            <img src="assets/ad-image.png" alt="Ad image pixelated" class="ad-image" style="margin-bottom: 24px;">
+            <!-- Carousel -->
+            <div class="carousel">
+              <div class="carousel-track">
+                <div class="carousel-slide"><img src="assets/ad-image.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/Images/ad-detail-2.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/Images/ad-detail-3.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/Images/ad-detail-4.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/ad-image.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/Images/ad-detail-2.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/Images/ad-detail-3.png" alt=""></div>
+                <div class="carousel-slide"><img src="assets/Images/ad-detail-4.png" alt=""></div>
+              </div>
+              <button class="carousel-button prev">&#8249;</button>
+              <button class="carousel-button next">&#8250;</button>
+            </div>
+            <!-- End carousel -->
           </div>
+
           <p style="text-align: justify;">Blue eyes, long legs, shorter patience for broke men. Three ex-husbands, zero regrets. Seeks wealthy gentlement who knows investments appreciate. <span class="lh-text-special" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GSOH means Good Sense of Humour (means they are funny :)">GSOH</span> about prenups. BOX No. 8888.</p>
-          <a class="ad-link" href="#"><b>lonelyhearts.me/box/8888</b></a>
+
+          <!-- Box no -->
+           <div class="d-flex justify-content-center">
+            <div class="d-inline-flex lh-box-no">
+              <img src="assets/icons/box-no-icon.png" alt="Box icon">
+              <span>BOX No. 8888.</span>
+             </div>
+           </div>
+
+          <!-- Link ad -->
+           <div class="d-flex lh-link-list">
+            <span class="lh-link-icon">
+              <img src="assets/icons/link-icon.svg" alt="Chain icon">
+            </span>
+            <a href="#">lonelyhearts.me/box/8888</a>
+           </div>
         </div>
         
         <div class="bottom">
@@ -103,6 +123,60 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   <script src="assets/script.js"></script>
   <script>
+    const track = document.querySelector('.carousel-track');
+    let slides = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+
+    const itemsPerView = 4;
+    let currentIndex = itemsPerView; // start at cloned section
+
+    // Clone first & last slides for infinite effect
+    slides.slice(-itemsPerView).forEach(slide => {
+      track.prepend(slide.cloneNode(true));
+    });
+    slides.slice(0, itemsPerView).forEach(slide => {
+      track.append(slide.cloneNode(true));
+    });
+
+    slides = Array.from(track.children);
+
+    // Update position
+    function updateSlide(animate = true) {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+      track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
+
+    // Initial positioning
+    window.addEventListener('load', () => {
+      updateSlide(false);
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentIndex++;
+      updateSlide();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex--;
+      updateSlide();
+    });
+
+    // Reset when reaching clones
+    track.addEventListener('transitionend', () => {
+      if (currentIndex >= slides.length - itemsPerView) {
+        currentIndex = itemsPerView;
+        updateSlide(false);
+      }
+      if (currentIndex < itemsPerView) {
+        currentIndex = slides.length - itemsPerView * 2;
+        updateSlide(false);
+      }
+    });
+
+    window.addEventListener('resize', () => updateSlide(false));
+
     document.addEventListener('DOMContentLoaded', function () {
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

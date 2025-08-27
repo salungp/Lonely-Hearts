@@ -5,14 +5,28 @@
     font-style: normal;
 }
 
+:root {
+    --color-bg: #FFF5DF;
+    --fill: #FBF6EC;
+    --dark: #384B49;
+    --placeholder: #D1D3D9;
+    --green: #88A5A0;
+    --green-dark: #5C7377;
+    --red: #DD775A;
+    --red-dark: #A34D41;
+}
+
 body, h1, p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #FFF5DF;
     font-family: 'VCR OSD Mono', 'font-style', 'Arial';
     background-image: url('paper.png');
-    color: #384B49;
+    color: var(--dark);
+}
+
+body {
+    background-color: var(--color-bg);
 }
 
 .lh-header nav {
@@ -42,11 +56,11 @@ body, h1, p {
 .lh-dropdown {
     display: none;
     flex-direction: column;
-    background-color: #FFF5DF;
+    background-color: var(--color-bg);
     position: absolute;
     top: 52px;
     width: 100%;
-    border: 4px solid #5C7377;
+    border: 4px solid var(--green-dark);
     border-top: none !important;
     border-radius: 4px;
     padding: 16px;
@@ -57,14 +71,14 @@ body, h1, p {
 .lh-dropdown a {
     padding: 1rem;
     text-decoration: none;
-    color: #5C7377;
-    border-bottom: 2px solid #5C7377;
+    color: var(--green-dark);
+    border-bottom: 2px solid var(--green-dark);
     transition: .2s ease-in-out;
     text-transform: uppercase;
 }
 
 .lh-dropdown a:hover {
-    background-color: #FFEFCC;
+    background-color: var(--fill);
 }
 
 /* Show dropdown when active */
@@ -78,7 +92,7 @@ body, h1, p {
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #FFF5DF;
+    background-color: var(--color-bg);
 }
 
 .lh-header {
@@ -97,8 +111,8 @@ body, h1, p {
 .lh-header nav {
     height: 56px;
     width: 100%;
-    background-color: #88A5A0;
-    border: 4px solid #5C7377;
+    background-color: var(--green);
+    border: 4px solid var(--green-dark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,7 +396,7 @@ body, h1, p {
 }
 
 .lh-modal-header {
-    background-color: #5C7377;
+    background-color: var(--green-dark);
 }
 
 .sentence {
@@ -571,7 +585,7 @@ body, h1, p {
 }
 
 .lh-feed-featured {
-    border-color: #DD775A;
+    border-color: var(--red);
 }
 
 .lh-feed-card h2 {
@@ -586,7 +600,7 @@ body, h1, p {
 }
 
 .lh-text-special {
-    border-bottom: 2px solid #DD775A;
+    border-bottom: 2px solid var(--red);
 }
 
 .lh-link {
@@ -614,7 +628,7 @@ body, h1, p {
 .lh-nav-button {
     width: 32px;
     height: 32px;
-    background-color: #5C7377;
+    background-color: var(--green-dark);
     position: absolute;
     left: 8px;
     top: 8px;
@@ -627,3 +641,100 @@ body, h1, p {
     margin: 0 !important;
     width: 18px !important;
 }
+
+/* Link list style */
+.lh-link-list .lh-link-icon {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--red-dark);
+    background: var(--red);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.lh-link-list a {
+    width: 100%;
+    height: 56px;
+    display: flex !important;
+    text-decoration: none;
+    background: var(--fill);
+    align-items: center;
+    font-size: 18px;
+    color: var(--dark);
+    text-transform: uppercase;
+    padding: 16px;
+    border: 2px solid var(--placeholder);
+    border-left: none;
+}
+/* end of link list style */
+
+/* Box no style */
+.lh-box-no {
+    width: initial !important;
+    height: 36px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Merriweather';
+    border: 2px solid var(--dark);
+    margin-bottom: 16px;
+    gap: 6px;
+}
+
+.lh-box-no img {
+    width: 24px;
+}
+
+/* Carousel style */
+.carousel {
+    position: relative;
+    width: 800px; /* adjust as needed */
+    overflow: hidden;
+}
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    min-width: 33.33%; /* 4 items per view */
+    box-sizing: border-box;
+    padding: 4px;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: 2px solid #384B49;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #384B49;
+    z-index: 2;
+    transition: background 0.2s ease;
+  }
+
+  .carousel-button:hover {
+    background: #f0f0f0;
+  }
+
+  .carousel-button.prev {
+    left: 10px;
+  }
+
+  .carousel-button.next {
+    right: 10px;
+  }
