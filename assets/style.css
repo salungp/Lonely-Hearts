@@ -194,6 +194,11 @@ body {
   font-weight: bold;
 }
 
+.lh-button-icon-img {
+  width: 64px;
+  height: auto;
+}
+
 .lh-button-sm {
   height: 40px;
   width: 100%;
@@ -843,4 +848,51 @@ body {
   background: var(--dark);
   color: #fff;
   border-color: var(--dark);
+}
+
+/* Card feed */
+.lh-feed-icon {
+  width: 46px;
+  height: 46px;
+  background-color: var(--color-bg);
+  border: 2px solid var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 46px;
+  transition: none !important;
+}
+
+.lh-feed-icon img {
+  width: 30px;
+}
+
+.lh-feed-content h2 {
+  font-family: "VCR OSD Mono";
+  font-size: 18px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.lh-feed-content p {
+  font-size: 14px;
+  font-family: "Merriweather";
+}
+
+.lh-active-feed {
+  border-color: var(--red);
+  background-color: rgba(210, 96, 90, 0.3);
+}
+
+.lh-active-feed .lh-feed-icon {
+  border-color: var(--red-dark);
+  background-color: var(--red);
+}
+
+/* end card feed */
+
+/* Lh offer price */
+.lh-offer-price {
+  font-size: 42px;
+  text-align: center;
 }
