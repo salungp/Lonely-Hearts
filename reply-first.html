@@ -29,7 +29,6 @@
 
     <!-- css -->
     <link rel="stylesheet" href="assets/style.css" />
-    
   </head>
   <body>
     <header class="lh-header">
@@ -192,7 +191,7 @@
             >
               Stay Safe
             </button>
-            <button class="lh-button">VIEW MESSAGE</button>
+            <button class="lh-button" id="ctaButton">VIEW MESSAGE</button>
           </div>
         </div>
       </div>
@@ -211,8 +210,12 @@
       const popup = document.getElementById("popup");
       const showBtn = document.getElementById("showPopup");
       const closeBtn = document.getElementById("closePopup");
-
+      const ctaButton = document.getElementById("ctaButton");
       const tags = document.querySelectorAll(".lh-tag");
+
+      ctaButton.addEventListener("click", function () {
+        window.location.href = "offer.html";
+      });
 
       tags.forEach((tag) => {
         tag.addEventListener("click", () => {
