@@ -738,3 +738,21 @@ body {
   .carousel-button.next {
     right: 10px;
   }
+
+  /* input line */
+  .input-line {
+    display: inline-block;       
+    min-width: 60px;             
+    width: auto;                
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--dark);
+    outline: none;
+    font-family: inherit;        
+    font-size: inherit;
+    color: var(--red);
+    font-size: 20px;
+  }
+
+  /* end input line */
+  
