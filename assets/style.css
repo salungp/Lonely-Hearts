@@ -682,6 +682,104 @@ body {
 }
 /* end of link list style */
 
+/* Carousel */
+/* Carousel style */
+.carousel {
+  position: relative;
+  width: 800px; /* adjust as needed */
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 33.33%; /* 4 items per view */
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 2px solid #384b49;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #384b49;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+
+.carousel-button:hover {
+  background: #f0f0f0;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+/* Link list style */
+.lh-link-list .lh-link-icon {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--red-dark);
+  background: var(--red);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.lh-link-list a {
+  width: 100%;
+  height: 56px;
+  display: flex !important;
+  text-decoration: none;
+  background: var(--fill);
+  align-items: center;
+  font-size: 18px;
+  color: var(--dark);
+  text-transform: uppercase;
+  padding: 16px;
+  border: 2px solid var(--placeholder);
+  border-left: none;
+}
+/* end of link list style */
+
+/* Box no style */
+.lh-box-no {
+  width: initial !important;
+  height: 36px;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: "Merriweather";
+  border: 2px solid var(--dark);
+  margin-bottom: 16px;
+  gap: 6px;
+}
+
+.lh-box-no img {
+  width: 24px;
+}
+
 /* Box no style */
 .lh-box-no {
   width: initial !important;
