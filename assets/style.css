@@ -133,44 +133,36 @@ body {
   margin-right: 12px;
 }
 
-.lh-input {
+/* ------ Input field & textarea ----- */
+
+.lh-input, .lh-textarea {
   width: 100%;
-  height: 56px;
   border-radius: 4px;
-  border: 2px solid #384b49;
-  background-color: #fbf6ec;
-  font-size: 20px;
-  padding: 0 18px;
-  transition: 0.1s ease-in-out;
+  border: 2px solid var(--dark) !important;
+  background-color: var(--fill);
+  font-size: 16px;
   outline: none;
+  transition: 0.1s ease-in-out;
+}
+
+.lh-input {
+  height: 48px;
+  padding: 0 12px;
 }
 
 .lh-textarea {
-  width: 100%;
   height: 300px;
-  border-radius: 4px;
-  border: 2px solid #384b49;
-  background-color: #fbf6ec;
-  font-size: 20px;
   padding: 18px;
-  transition: 0.1s ease-in-out;
-  outline: none;
 }
 
-.lh-input:focus {
-  border-color: #a34d41;
+.lh-input:focus, .lh-textarea:focus {
+  border-color: #a34d41 !important;
 }
 
-.lh-textarea:focus {
-  border-color: #a34d41;
-}
-
-.lh-input::placeholder {
-  color: #d1d3d9;
-}
-
-.lh-textarea::placeholder {
-  color: #d1d3d9;
+.lh-input::placeholder, .lh-textarea::placeholder {
+  color: var(--placeholder);
+  font-weight: 100;
+  text-transform: uppercase;
 }
 
 .lh-textarea-info {
@@ -178,6 +170,12 @@ body {
   bottom: 14px;
   right: 14px;
 }
+
+.lh-input-tel {
+  padding-left: 80px !important;
+}
+
+/* ----- End of field input & textarea ----- */
 
 .lh-button {
   height: 56px;
@@ -884,6 +882,10 @@ body {
   z-index: 1000;
 }
 
+.lh-popup.full-height {
+  height: 90vh;
+}
+
 .lh-popup-header {
   width: 100%;
   background-color: var(--green-dark);
@@ -993,4 +995,18 @@ body {
 .lh-offer-price {
   font-size: 42px;
   text-align: center;
+}
+
+/* lh input group */
+.lh-input-group label {
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+/* Lh title pop up */
+.lh-title {
+  text-transform: uppercase;
+  font-size: 24px;
 }

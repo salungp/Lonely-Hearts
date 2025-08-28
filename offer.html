@@ -29,6 +29,79 @@
 
     <!-- css -->
     <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .phone-input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .lh-country-display {
+        padding: 4px 6px;
+        border-radius: 6px;
+        cursor: pointer;
+        position: absolute;
+        left: 8px;
+        top: 6px;
+      }
+
+      input[type="tel"] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        flex: 1;
+      }
+
+      /* Popup */
+      .popup {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: last baseline;
+        z-index: 99999999999999999;
+        transition: 0.3s ease-in-out;
+      }
+
+      .popup.hidden {
+        bottom: -100%;
+        background: transparent;
+      }
+
+      .popup-content {
+        background: #fff;
+        width: 100%;
+        padding: 20px;
+        border-radius: 4px 4px 0px 0px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+
+      .popup-content input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+
+      #countryList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #countryList li {
+        padding: 8px;
+        cursor: pointer;
+      }
+
+      #countryList li:hover {
+        background: #f0f0f0;
+      }
+    </style>
   </head>
   <body>
     <header class="lh-header">
@@ -73,7 +146,10 @@
         </h2>
 
         <!-- Feed list -->
-        <div class="lh-feed-card text-decoration-none text-dark" data-price="50">
+        <div
+          class="lh-feed-card text-decoration-none text-dark"
+          data-price="50"
+        >
           <div class="d-flex" style="gap: 16px; align-items: flex-start">
             <div class="lh-feed-icon">
               <img src="assets/envelope-icon.png" alt="Envelope icon" />
@@ -92,7 +168,10 @@
         <!-- end card -->
 
         <!-- Feed list -->
-        <div class="lh-feed-card text-decoration-none text-dark" data-price="60">
+        <div
+          class="lh-feed-card text-decoration-none text-dark"
+          data-price="60"
+        >
           <div class="d-flex" style="gap: 16px; align-items: flex-start">
             <div class="lh-feed-icon">
               <img src="assets/icons/flower-png.png" alt="Envelope icon" />
@@ -111,7 +190,10 @@
         <!-- end card -->
 
         <!-- Feed list -->
-        <div class="lh-feed-card text-decoration-none text-dark" data-price="80">
+        <div
+          class="lh-feed-card text-decoration-none text-dark"
+          data-price="80"
+        >
           <div class="d-flex" style="gap: 16px; align-items: flex-start">
             <div class="lh-feed-icon">
               <img src="assets/envelope-icon.png" alt="Envelope icon" />
@@ -130,6 +212,63 @@
         <!-- end card -->
 
         <h1 class="lh-offer-price">$50</h1>
+
+        <!-- Pop up -->
+        <div id="popup" class="lh-popup full-height">
+          <div class="lh-popup-header">
+            <button id="closePopup">
+              <img src="assets/icons/x-bold.svg" alt="Close button" />
+            </button>
+          </div>
+          <div class="lh-popup-body">
+            <h2
+              class="lh-title"
+              style="width: 100%; text-align: left; margin-bottom: 20px"
+            >
+              before continue
+            </h2>
+
+            <div class="lh-input-group mb-3">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="lh-input"
+                placeholder="Enter your name"
+                name="name"
+              />
+            </div>
+
+            <div class="lh-input-group mb-3 position-relative">
+              <label for="name">Phone number</label>
+              <div class="position-relative">
+                <div id="countrySelector" class="lh-country-display">
+                  +62 🇮🇩
+                </div>
+                <input
+                  type="tel"
+                  class="lh-input lh-input-tel"
+                  placeholder="Enter your phone number"
+                  name="name"
+                />
+              </div>
+            </div>
+
+            <button id="closePopup" class="lh-button">Sign up</button>
+          </div>
+        </div>
+        <!-- end pop up -->
+
+        <!-- Country Selector Popup -->
+        <div id="countryPopup" class="popup hidden">
+          <div class="popup-content">
+            <input
+              type="text"
+              id="countrySearch"
+              placeholder="Search country..."
+            />
+            <ul id="countryList"></ul>
+          </div>
+        </div>
 
         <div class="bottom">
           <div class="container-sm">
@@ -154,6 +293,7 @@
             <button class="lh-button mb-2">
               <img
                 class="lh-button-icon-img"
+                id="payWithApple"
                 src="assets/icons/apple-pay.png"
                 alt="Pay with apple pay"
               />
@@ -162,6 +302,7 @@
             <button class="lh-button">
               <img
                 class="lh-button-icon-img"
+                id="payWithGoogle"
                 src="assets/icons/google-pay.png"
                 alt="Pay with apple pay"
               />
@@ -184,6 +325,20 @@
     <script>
       const lhFeed = document.querySelectorAll(".lh-feed-card");
       const priceDisplay = document.querySelector(".lh-offer-price");
+      const payWithApple = document.getElementById("payWithApple");
+      const payWithGoogle = document.getElementById("payWithGoogle");
+      const popup = document.getElementById("popup");
+      const closePopup = document.getElementById("closePopup");
+
+      ["payWithApple", "payWithGoogle"].forEach((id) => {
+        document.getElementById(id).addEventListener("click", () => {
+          popup.classList.add("active");
+        });
+      });
+
+      closePopup.addEventListener("click", () => {
+        popup.classList.remove("active");
+      });
 
       lhFeed.forEach((card) => {
         card.addEventListener("click", () => {
@@ -196,6 +351,21 @@
           const price = card.getAttribute("data-price");
           priceDisplay.textContent = `$${price}`;
         });
+      });
+
+      const countries = [
+        { name: "United States", code: "+1", flag: "🇺🇸" },
+        { name: "United Kingdom", code: "+44", flag: "🇬🇧" },
+        { name: "Indonesia", code: "+62", flag: "🇮🇩" },
+        { name: "India", code: "+91", flag: "🇮🇳" },
+        { name: "Japan", code: "+81", flag: "🇯🇵" },
+        // ... add more countries
+      ];
+
+      new CountrySelector({
+        trigger: "#countrySelector", // the element to open popup
+        popup: "#countryPopup", // popup container
+        countries: countries, // data
       });
     </script>
   </body>
