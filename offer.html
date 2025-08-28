@@ -253,7 +253,7 @@
               </div>
             </div>
 
-            <button id="closePopup" class="lh-button">Sign up</button>
+            <button id="ctaButton" class="lh-button">Sign up</button>
           </div>
         </div>
         <!-- end pop up -->
@@ -290,19 +290,17 @@
                 Agree with terms & condition
               </label>
             </div>
-            <button class="lh-button mb-2">
+            <button class="lh-button mb-2" id="payWithApple">
               <img
                 class="lh-button-icon-img"
-                id="payWithApple"
                 src="assets/icons/apple-pay.png"
                 alt="Pay with apple pay"
               />
               with apple pay
             </button>
-            <button class="lh-button">
+            <button class="lh-button" id="payWithGoogle">
               <img
                 class="lh-button-icon-img"
-                id="payWithGoogle"
                 src="assets/icons/google-pay.png"
                 alt="Pay with apple pay"
               />
@@ -329,6 +327,7 @@
       const payWithGoogle = document.getElementById("payWithGoogle");
       const popup = document.getElementById("popup");
       const closePopup = document.getElementById("closePopup");
+      const ctaButton = document.getElementById("ctaButton");
 
       ["payWithApple", "payWithGoogle"].forEach((id) => {
         document.getElementById(id).addEventListener("click", () => {
@@ -338,6 +337,10 @@
 
       closePopup.addEventListener("click", () => {
         popup.classList.remove("active");
+      });
+
+      ctaButton.addEventListener("click", () => {
+        window.location.href = "verify-code.html";
       });
 
       lhFeed.forEach((card) => {
