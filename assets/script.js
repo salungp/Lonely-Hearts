@@ -1,11 +1,12 @@
 class BootstrapPinInput {
-  constructor() {
+  constructor(options) {
     this.inputs = document.querySelectorAll(".pin-input-field");
     this.submitBtn = document.getElementById("submitBtn");
     this.messageContainer = document.getElementById("messageContainer");
     this.messageAlert = document.getElementById("messageAlert");
     this.loadingSpinner = document.getElementById("loadingSpinner");
     this.correctPin = "12345"; // Ganti dengan PIN yang diinginkan
+    this.condition = options;
 
     this.init();
   }
@@ -21,7 +22,13 @@ class BootstrapPinInput {
     });
 
     // Event listeners untuk tombol
-    this.submitBtn.addEventListener("click", () => this.handleSubmit());
+    if (this.condition) {
+        this.submitBtn.addEventListener("click", () => this.handleSubmit());
+    } else {
+        return;
+    }
+
+    
   }
 
   handleInput(e, index) {
