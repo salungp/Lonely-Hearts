@@ -1006,12 +1006,20 @@ body {
 }
 
 /* Lh title pop up */
-.lh-title {
+.lh-title, .lh-description {
   text-transform: uppercase;
+}
+
+.lh-title {
   font-size: 24px;
 }
 
 .lh-description {
-  text-transform: uppercase;
   font-size: 14px;
+}
+
+.lh-text {
+  font-family: 'Merriweather';
+  line-height: 2;
+  font-size: 16px;
 }
