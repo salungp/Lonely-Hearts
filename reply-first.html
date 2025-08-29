@@ -144,45 +144,72 @@
           </button>
         </div>
 
-        <div id="popup" class="lh-popup">
+        <div id="popup" class="lh-popup" style="height: 90vh;">
           <div class="lh-popup-header">
+            <button id="popupBack" class="lh-nav-button">
+              <img src="assets/arrow-left.svg" alt="Icon back button">
+            </button>
             <button id="closePopup">
               <img src="assets/icons/x-bold.svg" alt="Close button" />
             </button>
           </div>
           <div class="lh-popup-body">
-            <h2 class="lh-title mb-3" style="text-align: left;">
-              I love
-            </h2>
-            <div class="tags-container">
-              <div class="lh-tag">CYCLING</div>
-              <div class="lh-tag">COUNTRY WALKS</div>
-              <div class="lh-tag">WEEKENDS AWAY</div>
-              <div class="lh-tag">PHOTOGRAPHY</div>
-              <div class="lh-tag">READING</div>
-              <div class="lh-tag">LITERATURE</div>
-              <div class="lh-tag">FASHION</div>
-              <div class="lh-tag">FINE DINING</div>
-              <div class="lh-tag">CINEMA</div>
-              <div class="lh-tag">MOVIES</div>
-              <div class="lh-tag">PUBS</div>
-              <div class="lh-tag">EVENINGS IN</div>
-              <div class="lh-tag">WINING AND DINING</div>
-              <div class="lh-tag">FOOTBALL</div>
-              <div class="lh-tag">SNOOKER</div>
-              <div class="lh-tag">CHESS</div>
-              <div class="lh-tag">SEWING</div>
-              <div class="lh-tag">GARDENING</div>
-              <div class="lh-tag">TRAVEL</div>
-              <div class="lh-tag">SIMPLE THINGS</div>
-              <div class="lh-tag">WINE</div>
-              <div class="lh-tag">CUDDLES</div>
-              <div class="lh-tag">DANCING</div>
-              <div class="lh-tag">FISHING</div>
-              <div class="lh-tag">DIY</div>
+
+            <!-- Screen one secenario -->
+            <div id="screenOne">
+              <h2 class="lh-title mb-3" style="text-align: left;">
+                I love
+              </h2>
+              <div class="tags-container">
+                <div class="lh-tag">CYCLING</div>
+                <div class="lh-tag">COUNTRY WALKS</div>
+                <div class="lh-tag">WEEKENDS AWAY</div>
+                <div class="lh-tag">PHOTOGRAPHY</div>
+                <div class="lh-tag">READING</div>
+                <div class="lh-tag">LITERATURE</div>
+                <div class="lh-tag">FASHION</div>
+                <div class="lh-tag">FINE DINING</div>
+                <div class="lh-tag">CINEMA</div>
+                <div class="lh-tag">MOVIES</div>
+                <div class="lh-tag">PUBS</div>
+                <div class="lh-tag">EVENINGS IN</div>
+                <div class="lh-tag">WINING AND DINING</div>
+                <div class="lh-tag">FOOTBALL</div>
+                <div class="lh-tag">SNOOKER</div>
+                <div class="lh-tag">CHESS</div>
+                <div class="lh-tag">SEWING</div>
+                <div class="lh-tag">GARDENING</div>
+                <div class="lh-tag">TRAVEL</div>
+                <div class="lh-tag">SIMPLE THINGS</div>
+                <div class="lh-tag">WINE</div>
+                <div class="lh-tag">CUDDLES</div>
+                <div class="lh-tag">DANCING</div>
+                <div class="lh-tag">FISHING</div>
+                <div class="lh-tag">DIY</div>
+              </div>
+  
+              <button id="continuePage" class="lh-button">Continue</button>
             </div>
 
-            <button id="closePopup" class="lh-button">Continue</button>
+            <!-- Screen two secenario -->
+            <div id="screenTwo">
+              <h2 class="lh-title mb-3" style="text-align: left;">
+                Looking for
+              </h2>
+              <div class="tags-container">
+                <div class="lh-tag">Nurse</div>
+                <div class="lh-tag">Doctor</div>
+                <div class="lh-tag">Scretary</div>
+                <div class="lh-tag">Manager</div>
+                <div class="lh-tag">Videographer</div>
+                <div class="lh-tag">Athlete</div>
+                <div class="lh-tag">Model</div>
+                <div class="lh-tag">Ballet</div>
+                <div class="lh-tag">Movies</div>
+              </div>
+  
+              <button id="closePopup" class="lh-button">Continue</button>
+            </div>
           </div>
         </div>
 
@@ -212,6 +239,25 @@
     <script src="assets/script.js"></script>
     <script>
       const popup = document.getElementById("popup");
+      const screenOne = getIdElement("screenOne");
+      const screenTwo = getIdElement("screenTwo");
+      const backButton = document.getElementById("popupBack");
+
+      screenTwo.style.display = "none";
+      backButton.style.display = "none";
+
+      clickAction("#continuePage", (el) => {
+        backButton.style.display = "flex";
+        screenOne.style.display = "none";
+        screenTwo.style.display = "block";
+      });
+
+      backButton.addEventListener("click", () => {
+        backButton.style.display = "none";
+        screenOne.style.display = "block";
+        screenTwo.style.display = "none";
+      });
+
 
       movePage("#ctaButton", "offer.html");
 

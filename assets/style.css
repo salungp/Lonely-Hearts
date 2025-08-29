@@ -101,7 +101,6 @@ body {
 .lh-header {
   width: 100%;
   padding: 20px 0;
-  margin-bottom: 20px;
 }
 
 .lh-header nav a {
@@ -807,7 +806,7 @@ body {
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel-slide {
@@ -818,7 +817,7 @@ body {
 
 .carousel-slide img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 2px;
   display: block;
 }
 
@@ -940,6 +939,7 @@ body {
   color: var(--dark);
   user-select: none;
   font-family: "VCR OSD Mono";
+  text-transform: uppercase;
 }
 
 .lh-tag:hover {
