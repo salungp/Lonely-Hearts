@@ -590,7 +590,7 @@ body {
   padding: 16px;
   border: 2px solid #d1d3d9;
   background-color: #fbf6ec;
-  display: block !important;
+  display: flex !important;
   text-decoration: none;
   margin-bottom: 12px;
 }
@@ -1006,12 +1006,16 @@ body {
 }
 
 /* Lh title pop up */
-.lh-title, .lh-description {
+.lh-title, .lh-sub-title, .lh-description {
   text-transform: uppercase;
 }
 
 .lh-title {
   font-size: 24px;
+}
+
+.lh-sub-title {
+  font-size: 18px;
 }
 
 .lh-description {
@@ -1022,4 +1026,54 @@ body {
   font-family: 'Merriweather';
   line-height: 2;
   font-size: 16px;
+}
+
+.lh-text-small {
+  font-family: 'Merriweather';
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+/* Message item */
+.lh-message-card {
+  border: 2px solid var(--dark);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.lh-message-header {
+  padding: 20px;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--dark);
+  display: flex;
+  justify-content: space-between;
+}
+
+.lh-message-header .right {
+  text-align: right;
+}
+
+.lh-message-header .left {
+  text-align: left;
+}
+
+.lh-message-body {
+  padding: 20px;
+  background: var(--fill);
+}
+
+.lh-message-body h4 {
+  font-size: 24px;
+  font-family: 'Merriweather';
+  text-transform: uppercase;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.lh-message-body p {
+  font-size: 16px;
+  font-family: 'Merriweather';
+  line-height: 2;
+  text-align: justify;
 }

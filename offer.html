@@ -322,8 +322,6 @@
       const payWithApple = document.getElementById("payWithApple");
       const payWithGoogle = document.getElementById("payWithGoogle");
       const popup = document.getElementById("popup");
-      const closePopup = document.getElementById("closePopup");
-      const ctaButton = document.getElementById("ctaButton");
 
       ["payWithApple", "payWithGoogle"].forEach((id) => {
         document.getElementById(id).addEventListener("click", () => {
@@ -331,11 +329,11 @@
         });
       });
 
-      closePopup.addEventListener("click", () => {
-        popup.classList.remove("active");
+      clickAction("#closePopup", () => {
+        getIdElement("popup").classList.remove("active");
       });
 
-      ctaButton.addEventListener("click", () => {
+      getIdElement("ctaButton").addEventListener("click", () => {
         window.location.href = "verify-code.html";
       });
 

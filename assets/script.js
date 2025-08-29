@@ -355,4 +355,24 @@ class CountrySelector {
   }
 }
 
+// Handle add or remove class
+function clickAction(selector, callback) {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((el, index) => {
+    el.addEventListener("click", (e) => callback(e.target, index, el));
+  });
+}
+
+// get id
+function getIdElement(el) {
+  return document.getElementById(el);
+}
+
+// redirect page
+function movePage(el, page) {
+  clickAction(el, () => {
+      window.location.href = page;
+  });
+}
+
   
