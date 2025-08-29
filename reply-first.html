@@ -208,26 +208,18 @@
     <script src="assets/script.js"></script>
     <script>
       const popup = document.getElementById("popup");
-      const showBtn = document.getElementById("showPopup");
-      const closeBtn = document.getElementById("closePopup");
-      const ctaButton = document.getElementById("ctaButton");
-      const tags = document.querySelectorAll(".lh-tag");
 
-      ctaButton.addEventListener("click", function () {
-        window.location.href = "offer.html";
+      movePage("#ctaButton", "offer.html");
+
+      clickAction(".lh-tag", (el) => {
+        el.classList.toggle("active");
       });
 
-      tags.forEach((tag) => {
-        tag.addEventListener("click", () => {
-          tag.classList.toggle("active");
-        });
-      });
-
-      showBtn.addEventListener("click", () => {
+      clickAction("#showPopup", () => {
         popup.classList.add("active");
       });
 
-      closeBtn.addEventListener("click", () => {
+      clickAction("#closePopup", () => {
         popup.classList.remove("active");
       });
 
