@@ -121,7 +121,7 @@ body {
 }
 
 .lh-header nav h2 {
-  font-size: 26px;
+  font-size: 18px;
   background-color: none;
   color: #ffffff;
   margin-bottom: 0 !important;
@@ -129,8 +129,8 @@ body {
 }
 
 .lh-header nav img {
-  width: 30px;
-  margin-right: 12px;
+  width: 22px;
+  margin-right: 8px;
 }
 
 /* ------ Input field & textarea ----- */
