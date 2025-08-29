@@ -35,7 +35,7 @@
       <div class="container-sm">
         <nav>
           <a href="offer.html" class="lh-nav-button">
-            <img src="assets/arrow-left.svg" alt="Icon back button">
+            <img src="assets/arrow-left.svg" alt="Icon back button" />
           </a>
 
           <a href="#">
@@ -125,57 +125,6 @@
         <a href="#" class="lh-link">Resend Code</a>
         <a href="#" class="lh-link">Change phone number</a>
 
-        <!-- Pop up -->
-        <div id="popup" class="lh-popup full-height">
-            <div class="lh-popup-header">
-              <button id="closePopup">
-                <img src="assets/icons/x-bold.svg" alt="Close button" />
-              </button>
-            </div>
-            <div class="lh-popup-body">
-              <h2
-                class="lh-title"
-                style="width: 100%; text-align: left; margin-bottom: 20px"
-              >
-              CONFIRMATION
-              </h2>
-  
-              <div class="d-flex justify-content-center mb-4">
-                <img style="width: 180px;" src="assets/envelope-icon.png" alt="Pixel heart on lost page">
-            </div>
-
-            <h1 class="text-center mb-4" style="font-size: 50px; letter-spacing: 6%;">21342</h1>
-            <h4 class="mb-4" style="font-size: 30px; letter-spacing: 6%;">Your box number</h4>
-            <p class="lh-text">lonelyhearts.me/box/21342</p>
-              </div>
-  
-              <div class="bottom">
-                <div class="container-sm">
-                  <div class="d-flex" style="gap: 16px">
-                    <button
-                      class="lh-button-icon"
-                      style="background-color: #dd775a; border-color: #a34d41"
-                    >
-                      <img src="assets/heart.svg" class="lh-small-icon" alt="" />
-                    </button>
-
-                    <form action="index.html" style="width: 100%">
-                      <button class="lh-button">Check it</button>
-                    </form>
-                    <button
-                      class="lh-button-icon"
-                      id="share-button"
-                      style="background-color: #88a5a0; border-color: #5c7377"
-                    >
-                      <img src="assets/share.svg" class="lh-small-icon" alt="" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end pop up -->
-
         <div class="bottom">
           <div class="container-sm">
             <button id="ctaButton" class="lh-button">Continue</button>
@@ -194,22 +143,12 @@
     ></script>
     <script src="assets/script.js"></script>
     <script>
-        const popup = document.getElementById("popup");
-        const ctaButton = document.getElementById("ctaButton");
-        const closeButton = document.getElementById("closePopup");
-
-        ctaButton.addEventListener("click", () => {
-            popup.classList.add("active");
-        });
-
-        closeButton.addEventListener("click", () => {
-            popup.classList.remove("active");
-        });
+      movePage("ctaButton", "index.html");
 
       // Initialize setelah DOM loaded
-    document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         new BootstrapPinInput(false);
-    });
+      });
     </script>
   </body>
 </html>
