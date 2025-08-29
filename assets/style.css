@@ -14,6 +14,8 @@
   --green-dark: #5c7377;
   --red: #dd775a;
   --red-dark: #a34d41;
+  --gold: #BD8919;
+  --gold-light: #F4DDAC;
 }
 
 body,
@@ -1150,3 +1152,23 @@ input[type="tel"] {
 }
 
 /* Offer page */
+
+/* Lonely hearts gold button */
+.lh-gold-btn {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-radius: 2px;
+  border: 2px solid var(--gold);
+  background: var(--gold-light);
+  font-family: 'Merriweather';
+  font-weight: normal;
+  color: var(--dark);
+}
+
+.lh-gold-btn .btn-icon {
+  width: 24px;
+}
