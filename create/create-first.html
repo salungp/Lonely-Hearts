@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lonely Hearts</title>
+
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+
+    <title>Lonely Hearts</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <header class="lh-header">
+      <div class="container-sm">
+        <nav>
+          <a href="create-ad.html" class="lh-nav-button">
+            <img src="../assets/arrow-left.svg" alt="Icon back button">
+          </a>
+
+          <a href="#">
+            <img
+              src="../assets/logo.svg"
+              alt="Lonely hearts logo heart pixelated"
+            />
+            <h2>LONELY HEARTS</h2>
+          </a>
+
+          <div class="lh-hamburger" id="lhHamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="lh-dropdown" id="lhMobileMenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+          </div>
+        </nav>
+
+        <div class="lh-sub-header d-flex mt-3 justify-content-between">
+          <h3 id="current-date">FRI 6th Jun 2025</h3>
+          <div class="d-flex">
+            <span>LONDON</span>
+            <img src="../assets/sunny.png" alt="Sunny weather" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-sm">
+        <h2 class="lh-title mb-3">
+          I'll write it
+        </h2>
+
+        <!-- Modal -->
+        <div
+          class="modal lh-modal fade"
+          id="staySafeModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog lh-modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header lh-modal-header">
+                <h1
+                  class="modal-title lh-modal-title fs-5"
+                  id="exampleModalLabel"
+                >
+                  Stay Safe
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="d-flex justify-content-center mb-4">
+                  <img
+                    style="width: 88px"
+                    src="../assets/stay-safe.png"
+                    alt="Stay safe warning icon"
+                  />
+                </div>
+
+                <h3 style="text-transform: uppercase; text-align: center">
+                  Stay safe while connecting with the new people. not to share
+                  personal data, don't send money to strangers.
+                </h3>
+              </div>
+              <div class="modal-footer">
+                <button class="lh-button" data-bs-dismiss="modal">
+                  got it
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: relative">
+          <textarea
+            class="lh-textarea"
+            oninput="updateLHtextarea()"
+            name=""
+            id="lh-textarea"
+            maxlength="100"
+            placeholder="Write your own ad"
+          ></textarea>
+          <div class="lh-textarea-info">
+            <span id="lh-textarea-info">0</span>/100
+          </div>
+          <button
+            class="d-flex lh-box-no"
+            style="position: absolute; bottom: 6px; left: 16px; z-index: 99;"
+            id="showPopup"
+          >
+            Help me write
+          </button>
+        </div>
+
+        <div id="popup" class="lh-popup">
+          <div class="lh-popup-header">
+            <button id="closePopup">
+              <img src="../assets/icons/x-bold.svg" alt="Close button" />
+            </button>
+          </div>
+          <div class="lh-popup-body">
+            <h2 class="lh-title mb-3" style="text-align: left;">
+              I love
+            </h2>
+            <div class="tags-container">
+              <div class="lh-tag">CYCLING</div>
+              <div class="lh-tag">COUNTRY WALKS</div>
+              <div class="lh-tag">WEEKENDS AWAY</div>
+              <div class="lh-tag">PHOTOGRAPHY</div>
+              <div class="lh-tag">READING</div>
+              <div class="lh-tag">LITERATURE</div>
+              <div class="lh-tag">FASHION</div>
+              <div class="lh-tag">FINE DINING</div>
+              <div class="lh-tag">CINEMA</div>
+              <div class="lh-tag">MOVIES</div>
+              <div class="lh-tag">PUBS</div>
+              <div class="lh-tag">EVENINGS IN</div>
+              <div class="lh-tag">WINING AND DINING</div>
+              <div class="lh-tag">FOOTBALL</div>
+              <div class="lh-tag">SNOOKER</div>
+              <div class="lh-tag">CHESS</div>
+              <div class="lh-tag">SEWING</div>
+              <div class="lh-tag">GARDENING</div>
+              <div class="lh-tag">TRAVEL</div>
+              <div class="lh-tag">SIMPLE THINGS</div>
+              <div class="lh-tag">WINE</div>
+              <div class="lh-tag">CUDDLES</div>
+              <div class="lh-tag">DANCING</div>
+              <div class="lh-tag">FISHING</div>
+              <div class="lh-tag">DIY</div>
+            </div>
+
+            <button id="closePopup" class="lh-button">Continue</button>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="container-sm">
+            <button
+              class="lh-button-secondary mb-3"
+              data-bs-toggle="modal"
+              data-bs-target="#staySafeModal"
+            >
+              Stay Safe
+            </button>
+            <button class="lh-button" id="ctaButton">VIEW MESSAGE</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <!-- bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/script.js"></script>
+    <script>
+      const popup = document.getElementById("popup");
+
+      movePage("#ctaButton", "preview.html");
+
+      clickAction(".lh-tag", (el) => {
+        el.classList.toggle("active");
+      });
+
+      clickAction("#showPopup", () => {
+        popup.classList.add("active");
+      });
+
+      clickAction("#closePopup", () => {
+        popup.classList.remove("active");
+      });
+
+      // initialize on load
+      document.addEventListener("DOMContentLoaded", updateLHtextarea);
+    </script>
+  </body>
+</html>

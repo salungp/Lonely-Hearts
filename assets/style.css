@@ -267,7 +267,7 @@ body {
 }
 
 .ad-title {
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
   text-transform: uppercase;
   font-family: "Merriweather";
@@ -1077,3 +1077,76 @@ body {
   line-height: 2;
   text-align: justify;
 }
+
+/* Offer page CSS */
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lh-country-display {
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: absolute;
+  left: 8px;
+  top: 6px;
+}
+
+input[type="tel"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+  z-index: 99999999999999999;
+  transition: 0.3s ease-in-out;
+}
+
+.popup.hidden {
+  bottom: -100%;
+}
+
+.popup-content {
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px 4px 0px 0px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#countryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#countryList li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#countryList li:hover {
+  background: #f0f0f0;
+}
+
+/* Offer page */
