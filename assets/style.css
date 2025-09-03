@@ -1172,3 +1172,61 @@ input[type="tel"] {
 .lh-gold-btn .btn-icon {
   width: 24px;
 }
+
+/* Box confirmation */
+.box-confirmation {
+  overflow: hidden;
+}
+
+.box-confirmation-header {
+  width: 100%;
+  height: 56px;
+  background: var(--red);
+  border: 2px solid var(--red-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+
+.box-confirmation-icon {
+  width: 100%;
+  height: 188px;
+  background: var(--color-bg);
+  border: 2px solid var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-confirmation-icon img {
+  width: 158px;
+}
+
+.box-confirmation-footer h2 {
+  width: 100%;
+  font-size: 30px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: var(--green-dark);
+  margin-bottom: 0 !important;
+}
+
+.box-confirmation-number {
+  width: 100%;
+  height: 88px;
+  background: var(--green);
+  border: 2px solid var(--green-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
