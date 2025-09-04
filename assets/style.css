@@ -1230,3 +1230,10 @@ input[type="tel"] {
   font-size: 50px;
   letter-spacing: 10px;
 }
+
+/* Make the footer hidden in the mobile size */
+@media screen and (max-width: 600px) {
+  .lh-footer {
+    display: none;
+  }
+}
