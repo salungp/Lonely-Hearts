@@ -181,7 +181,7 @@ body {
 .lh-button {
   height: 56px;
   width: 100%;
-  display: block;
+  display: flex;
   text-decoration: none;
   text-align: center;
   border-radius: 4px;
@@ -191,6 +191,9 @@ body {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .lh-button-icon-img {
@@ -1066,11 +1069,12 @@ body {
 }
 
 .lh-message-body h4 {
-  font-size: 24px;
+  font-size: 16px;
   font-family: 'Merriweather';
   text-transform: uppercase;
   line-height: 1.4;
   text-align: left;
+  font-weight: bold;
 }
 
 .lh-message-body p {
@@ -1078,6 +1082,11 @@ body {
   font-family: 'Merriweather';
   line-height: 2;
   text-align: justify;
+}
+
+.lh-button.red {
+  background: var(--red);
+  color: #fff;
 }
 
 /* Offer page CSS */
