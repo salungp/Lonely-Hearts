@@ -34,10 +34,6 @@
     <header class="lh-header">
       <div class="container-sm">
         <nav>
-          <a href="ad-detail.html" class="lh-nav-button">
-            <img src="assets/arrow-left.svg" alt="Icon back button">
-          </a>
-
           <a href="#">
             <img
               src="assets/logo.svg"
@@ -71,47 +67,89 @@
 
     <main>
       <div class="container-sm">
-        <h2 class="lh-title" style="margin-bottom: 24px">Enter PO box number</h2>
-        <div>
-          <div class="lh-radio" style="margin-bottom: 20px">
-            <input
-              class="lh-radio-input"
-              type="radio"
-              name="replyOption"
-              id="one"
-              value="reply-first.html"
-            />
-            <span class="lh-radio-circle"></span>
-            <label for="one">I'll write it</label>
-          </div>
-          <div class="lh-radio">
-            <input
-              class="lh-radio-input"
-              type="radio"
-              name="replyOption"
-              id="two"
-              value="reply-second.html"
-            />
-            <span class="lh-radio-circle"></span>
-            <label for="two">Help me write it</label>
-          </div>
-          <div class="bottom">
-            <div class="container-sm">
-              <button class="lh-button" id="ctaButton">VIEW MESSAGE</button>
+        <h2 class="lh-title mb-3">Account</h2>
+
+        <div class="d-flex align-items-center mb-3" style="gap: 20px;">
+            <img src="assets/ad-image.png" alt="Profile image" style="width: 90px;">
+            <div class="text-content">
+                <h3 class="ad-title">Patricia, 46</h3>
+                <a href="#" class="lh-link" style="padding: 0 !important; text-align: left;">Edit profile</a>
             </div>
-          </div>
         </div>
+
+        <div class="d-flex lh-link-list mb-3">
+            <span class="lh-link-icon">
+              <img src="assets/icons/frame.svg" alt="Chain icon" />
+            </span>
+            <a href="#">My Ads</a>
+        </div>
+
+        <div class="d-flex lh-link-list mb-3">
+            <span class="lh-link-icon">
+              <img src="assets/icons/link-icon.svg" alt="Chain icon" />
+            </span>
+            <a href="#">Preferences</a>
+        </div>
+
+        <div class="d-flex lh-link-list mb-3">
+            <span class="lh-link-icon">
+              <img src="assets/icons/dollar.svg" alt="Chain icon" />
+            </span>
+            <a href="#">Payments</a>
+        </div>
+
+        <div class="d-flex lh-link-list mb-3">
+            <span class="lh-link-icon">
+              <img src="assets/icons/help.svg" alt="Chain icon" />
+            </span>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="d-flex lh-link-list mb-3">
+            <span class="lh-link-icon">
+              <img src="assets/icons/doc.svg" alt="Chain icon" />
+            </span>
+            <a href="#">Terms of services</a>
+        </div>
+
+        <div class="d-flex lh-link-list mb-3">
+            <span class="lh-link-icon">
+              <img src="assets/icons/doc.svg" alt="Chain icon" />
+            </span>
+            <a href="#">Privacy policy</a>
+        </div>
+
       </div>
     </main>
 
+    <div class="bottom" style="background: transparent;">
+        <div class="container-sm">
+          <a href="index.html" class="lh-link">Sign out</a>
+        </div>
+    </div>
+
     <footer class="lh-footer">
       <div class="container-sm">
-          <a href="what-is-lonely-hearts.html" class="lh-link">WHAT IS LONELY HEARTS?</a>
-          <a href="how-it-works.html" class="lh-link mb-3">HOW TO USE LONELY HEARTS?</a>
-  
-          <p class="text-center" style="font-family: 'Merriweather'; font-size: 14px; letter-spacing: .4px; color: var(--dark);">© Copyright allright reserved. Build with love ❤️</p>
-  
-          <div style="width: 100%; height: 50px; margin-bottom: 100px;"></div>
+        <a href="what-is-lonely-hearts.html" class="lh-link"
+          >WHAT IS LONELY HEARTS?</a
+        >
+        <a href="how-it-works.html" class="lh-link mb-3"
+          >HOW TO USE LONELY HEARTS?</a
+        >
+
+        <p
+          class="text-center"
+          style="
+            font-family: 'Merriweather';
+            font-size: 14px;
+            letter-spacing: 0.4px;
+            color: var(--dark);
+          "
+        >
+          © Copyright allright reserved. Build with love ❤️
+        </p>
+
+        <div style="width: 100%; height: 50px; margin-bottom: 100px"></div>
       </div>
     </footer>
 
@@ -123,22 +161,6 @@
     ></script>
     <script src="assets/script.js"></script>
     <script>
-      const selectInput = document.querySelectorAll("lh-radio-input");
-      const ctaButton = document.getElementById("ctaButton");
-
-      ctaButton.addEventListener("click", function () {
-        // get selected radio
-        const selected = document.querySelector(
-          "input[name='replyOption']:checked"
-        );
-
-        if (selected) {
-          // redirect to page based on value
-          window.location.href = selected.value;
-        } else {
-          alert("Please select an option first!");
-        }
-      });
     </script>
   </body>
 </html>

@@ -49,9 +49,9 @@
           </div>
 
           <div class="lh-dropdown" id="lhMobileMenu">
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="message.html">Message</a>
-            <a href="#">Account</a>
+            <a href="account.html">Account</a>
             <a href="#">ABOUT LONELY HEARTS DATING</a>
             <a href="#">LOOKING FOR LOVE?</a>
             <a href="#">LOOKING FOR LOVE?</a>
@@ -322,44 +322,48 @@
             </div>
 
             <!-- Reply container -->
-             <div id="replyContainer">
-                <div
-              style="position: relative"
-              class="reply-container"
-              id="replyContainer"
-            >
-              <textarea
-                class="lh-textarea"
-                oninput="updateLHtextarea()"
-                name=""
-                id="lh-textarea"
-                maxlength="100"
-                placeholder="Write your own ad"
-              ></textarea>
-              <div class="lh-textarea-info">
-                <span id="lh-textarea-info">0</span>/100
-              </div>
-              <button
-                class="d-flex lh-box-no"
-                style="position: absolute; bottom: 6px; left: 16px; z-index: 99"
-                id="showPopup"
+            <div id="replyContainer">
+              <div
+                style="position: relative"
+                class="reply-container"
+                id="replyContainer"
               >
-                Help me write
-              </button>
+                <textarea
+                  class="lh-textarea"
+                  oninput="updateLHtextarea()"
+                  name=""
+                  id="lh-textarea"
+                  maxlength="100"
+                  placeholder="Write your own ad"
+                ></textarea>
+                <div class="lh-textarea-info">
+                  <span id="lh-textarea-info">0</span>/100
+                </div>
+                <button
+                  class="d-flex lh-box-no"
+                  style="
+                    position: absolute;
+                    bottom: 6px;
+                    left: 16px;
+                    z-index: 99;
+                  "
+                  id="showPopup"
+                >
+                  Help me write
+                </button>
+              </div>
+              <div class="bottom">
+                <div class="container-sm">
+                  <button id="ctaButton3" class="lh-button mb-2">
+                    <img
+                      src="assets/icons/envelope-border.svg"
+                      alt="Envelope border icon"
+                    />
+                    Write a reply
+                  </button>
+                </div>
+              </div>
             </div>
-                <div class="bottom">
-                    <div class="container-sm">
-                      <button id="ctaButton3" class="lh-button mb-2">
-                        <img
-                          src="assets/icons/envelope-border.svg"
-                          alt="Envelope border icon"
-                        />
-                        Write a reply
-                      </button>
-                    </div>
-                  </div>
-             </div>
-            
           </div>
         </div>
         <!-- end pop up -->
