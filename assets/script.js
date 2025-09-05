@@ -363,6 +363,14 @@ function clickAction(selector, callback) {
   });
 }
 
+function getClass(selector) {
+  const elements = document.querySelectorAll(selector);
+  let result;
+  elements.forEach((el) => {
+    return el;
+  });
+}
+
 // get id
 function getIdElement(el) {
   return document.getElementById(el);
