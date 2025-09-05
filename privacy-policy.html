@@ -25,16 +25,25 @@
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.png" type="image/png" />
 
-    <title>Lonely Hearts</title>
-
     <!-- css -->
     <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .menu-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    </style>
   </head>
   <body>
     <header class="lh-header">
       <div class="container-sm">
         <nav>
-          <a href="#">
+          <a href="account.html" class="lh-nav-button">
+            <img src="assets/arrow-left.svg" alt="Icon back button" />
+          </a>
+
+          <a href="index.html">
             <img
               src="assets/logo.svg"
               alt="Lonely hearts logo heart pixelated"
@@ -60,73 +69,23 @@
 
         <div class="lh-sub-header d-flex mt-3 justify-content-between">
           <h3 id="current-date">FRI 6th Jun 2025</h3>
-          <a href="#" class="lh-location">London</a>
+          <a href="#" class="lh-location" style="text-decoration: underline"
+            >London</a
+          >
         </div>
       </div>
     </header>
 
     <main>
       <div class="container-sm">
-        <h2 class="lh-title mb-3">Account</h2>
+        <h2 class="lh-title mb-3">Privacy Policy</h2>
 
-        <div class="d-flex align-items-center mb-3" style="gap: 20px;">
-            <img src="assets/ad-image.png" alt="Profile image" style="width: 90px;">
-            <div class="text-content">
-                <h3 class="ad-title">Patricia, 46</h3>
-                <a href="edit-profile.html" class="lh-link" style="padding: 0 !important; text-align: left;">Edit profile</a>
-            </div>
-        </div>
-
-        <div class="d-flex lh-link-list mb-3">
-            <span class="lh-link-icon">
-              <img src="assets/icons/frame.svg" alt="Chain icon" />
-            </span>
-            <a href="my-ads.html">My Ads</a>
-        </div>
-
-        <div class="d-flex lh-link-list mb-3">
-            <span class="lh-link-icon">
-              <img src="assets/icons/link-icon.svg" alt="Chain icon" />
-            </span>
-            <a href="#">Preferences</a>
-        </div>
-
-        <div class="d-flex lh-link-list mb-3">
-            <span class="lh-link-icon">
-              <img src="assets/icons/dollar.svg" alt="Chain icon" />
-            </span>
-            <a href="payments.html">Payments</a>
-        </div>
-
-        <div class="d-flex lh-link-list mb-3">
-            <span class="lh-link-icon">
-              <img src="assets/icons/help.svg" alt="Chain icon" />
-            </span>
-            <a href="help.html">Help</a>
-        </div>
-
-        <div class="d-flex lh-link-list mb-3">
-            <span class="lh-link-icon">
-              <img src="assets/icons/doc.svg" alt="Chain icon" />
-            </span>
-            <a href="terms-of-service.html">Terms of services</a>
-        </div>
-
-        <div class="d-flex lh-link-list mb-3">
-            <span class="lh-link-icon">
-              <img src="assets/icons/doc.svg" alt="Chain icon" />
-            </span>
-            <a href="privacy-policy.html">Privacy policy</a>
-        </div>
-
+        <p class="lh-text">
+            We got tried of dating apps, swiping instead of connecting on a deeper level. Words are powerful, so powerful in fact, that from 1967 to xxxx it was the way to find love and a great connection with soul. <br> <br> In an always on connected world we wanted to bring back the humour and nostalgic feeling of connecting on a different level. We hope you find your lonely heart so it’s not so lonely anymore.
+        </p>
+        
       </div>
     </main>
-
-    <div class="bottom" style="background: transparent;">
-        <div class="container-sm">
-          <a href="index.html" class="lh-link">Sign out</a>
-        </div>
-    </div>
 
     <footer class="lh-footer">
       <div class="container-sm">
@@ -149,7 +108,7 @@
           © Copyright allright reserved. Build with love ❤️
         </p>
 
-        <div style="width: 100%; height: 50px; margin-bottom: 100px"></div>
+        <div style="width: 100%; height: 50px"></div>
       </div>
     </footer>
 
@@ -160,7 +119,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/script.js"></script>
-    <script>
-    </script>
   </body>
 </html>
