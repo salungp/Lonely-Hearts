@@ -71,10 +71,11 @@
 
     <main>
       <div class="container-sm">
-        <h2 class="lh-title" style="margin-bottom: 24px">Enter PO box number</h2>
+        <h2 class="lh-title mb-3">Enter PO box number</h2>
         <div>
-          <div class="lh-radio" style="margin-bottom: 20px">
-            <input
+          <div class="lh-radio mb-3">
+            <label for="one" class="d-flex align-items-center">
+              <input
               class="lh-radio-input"
               type="radio"
               name="replyOption"
@@ -82,10 +83,12 @@
               value="reply-first.html"
             />
             <span class="lh-radio-circle"></span>
-            <label for="one">I'll write it</label>
+            I'll write it
+          </label>
           </div>
           <div class="lh-radio">
-            <input
+            <label for="two" class="d-flex align-items-center">
+              <input
               class="lh-radio-input"
               type="radio"
               name="replyOption"
@@ -93,11 +96,12 @@
               value="reply-second.html"
             />
             <span class="lh-radio-circle"></span>
-            <label for="two">Help me write it</label>
+            Help me write it
+          </label>
           </div>
           <div class="bottom">
             <div class="container-sm">
-              <button class="lh-button" id="ctaButton">VIEW MESSAGE</button>
+              <button class="lh-button" id="ctaButton">Continue</button>
             </div>
           </div>
         </div>

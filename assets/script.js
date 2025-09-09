@@ -5,7 +5,7 @@ class BootstrapPinInput {
     this.messageContainer = document.getElementById("messageContainer");
     this.messageAlert = document.getElementById("messageAlert");
     this.loadingSpinner = document.getElementById("loadingSpinner");
-    this.correctPin = "12345"; // Ganti dengan PIN yang diinginkan
+    this.correctPin = "123456"; // Ganti dengan PIN yang diinginkan
     this.condition = options;
 
     this.init();

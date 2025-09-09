@@ -611,8 +611,16 @@ body {
   line-height: 180%;
 }
 
-.lh-small-icon {
-  width: 20px;
+.lh-custom-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('heart.svg');
+  background-position: center;
+  background-size: contain;
+}
+
+.lh-custom-icon.active {
+  background-image: url('icons/heart-fill.svg');
 }
 
 .lh-text-special {

@@ -146,9 +146,10 @@
             <div class="d-flex" style="gap: 16px">
               <button
                 class="lh-button-icon"
+                id="like"
                 style="background-color: #dd775a; border-color: #a34d41"
               >
-                <img src="assets/heart.svg" class="lh-small-icon" alt="" />
+                <div id="likeIcon" class="lh-custom-icon"></div>
               </button>
               <form action="reply.html" style="width: 100%">
                 <button class="lh-button">REPLY AD</button>
@@ -189,6 +190,12 @@
       let slides = Array.from(track.children);
       const prevButton = document.querySelector(".carousel-button.prev");
       const nextButton = document.querySelector(".carousel-button.next");
+      const like = false;
+      const likeIcon = document.getElementById("likeIcon");
+
+      clickAction("#like", (el) => {
+        likeIcon.classList.toggle("active");
+      });
 
       const itemsPerView = 4;
       let currentIndex = itemsPerView; // start at cloned section
