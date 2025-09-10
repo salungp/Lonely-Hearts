@@ -173,28 +173,35 @@
             <div class="message-lists" id="messageLists">
               <!-- Message body -->
               <div class="lh-message-card">
-                <div class="lh-message-header">
-                  <div class="left">
-                    <p class="lh-text-small">From</p>
-                    <h4 class="lh-sub-title">Patricia</h4>
+                  <div class="lh-message-header">
+                    <div class="left">
+                      <p class="lh-text-small">From</p>
+                      <h4 class="lh-sub-title">Patricia</h4>
+                    </div>
+                    <div class="right">
+                      <p class="lh-text-small">12, June 2025</p>
+                      <img
+                        style="width: 24px"
+                        src="assets/icons/heart-fill-50.svg"
+                        alt="Heart fill progress"
+                      />
+                    </div>
                   </div>
-                  <div class="right">
-                    <p class="lh-text-small">12, June 2025</p>
-                    <img
-                      style="width: 24px"
-                      src="assets/icons/heart-fill-50.svg"
-                      alt="Heart fill progress"
-                    />
+                  <div class="lh-message-body">
+                    <div
+                      id="envelope"
+                      class="envelope d-flex justify-content-center align-items-center">
+                      <img style="width: 200px;" src="assets/envelope-icon.png" alt="Envelope icon">
+                    </div>
+                    <div id="messageContent" class="message-content">
+                      <h4>Patricia, 46, F semi-retired gold digger</h4>
+                      <p class="lh-text-paragraph">
+                        Blue eyes, long legs, shorter patience for broke men. Three
+                        ex-husbands, zero regrets. Seeks wealthy gentleman who knows
+                        investments appreciate. GSOH about prenups. BOX No. 8888.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div class="lh-message-body">
-                  <h4>Patricia, 46, F semi-retired gold digger</h4>
-                  <p class="lh-text-paragraph">
-                    Blue eyes, long legs, shorter patience for broke men. Three
-                    ex-husbands, zero regrets. Seeks wealthy gentleman who knows
-                    investments appreciate. GSOH about prenups. BOX No. 8888.
-                  </p>
-                </div>
               </div>
 
               <!-- Message body -->
@@ -476,6 +483,9 @@
       const ctaButton1 = document.getElementById("ctaButton1");
       const ctaButton2 = document.getElementById("ctaButton2");
       const popup2 = document.getElementById("popup2");
+      const envelopeElement = document.getElementById("envelope");
+      const messageContent = document.getElementById("messageContent");
+      const envelope = true;
 
       const screenOne = getIdElement("screenOne");
       const screenTwo = getIdElement("screenTwo");
@@ -483,6 +493,16 @@
 
       screenTwo.style.display = "none";
       backButton.style.display = "none";
+
+      clickAction("#envelope", (el) => {
+        el.style.display = "none";
+        messageContent.style.display = "block";
+      });
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        envelopeElement.style.display = "block";
+        messageContent.style.display = "none";
+      });
 
       clickAction("#continuePage", (el) => {
         backButton.style.display = "flex";
