@@ -29,6 +29,49 @@
 
     <!-- css -->
     <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .lh-mini-dropdown-wrapper {
+        position: relative;
+      }
+
+      .lh-mini-dropdown {
+        width: 190px;
+        background: var(--fill);
+        border: 2px solid var(--dark);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        opacity: 0;
+        transition: .2s ease-in-out;
+      }
+
+      .lh-mini-dropdown a {
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        text-decoration: none;
+        color: var(--dark);
+        display: flex;
+        padding: 0 20px;
+        text-transform: uppercase;
+        font-size: 16px;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .lh-mini-dropdown a:nth-child(1) {
+        border-bottom: 2px solid var(--dark);
+      }
+
+      .lh-mini-dropdown a img {
+        width: 24px;
+      }
+
+      .lh-mini-dropdown.active {
+        opacity: 1;
+        top: 36px;
+      }
+    </style>
   </head>
   <body>
     <header class="lh-header">
@@ -194,7 +237,30 @@
                       <img style="width: 200px;" src="assets/envelope-icon.png" alt="Envelope icon">
                     </div>
                     <div id="messageContent" class="message-content">
-                      <h4>Patricia, 46, F semi-retired gold digger</h4>
+                      <div class="d-flex">
+                        <h4>Patricia, 46, F semi-retired gold digger</h4>
+
+                        <div class="lh-mini-dropdown-wrapper">
+                          <div role="button" class="lh-mini-dropdown-btn">
+                            <img
+                              src="assets/icons/ellipsis.svg"
+                              class="lh-small-icon"
+                              alt="Share icon"
+                            />
+                          </div>
+          
+                          <div class="lh-mini-dropdown">
+                            <a href="#">
+                              <span style="color: var(--red);">Report message</span>
+                            </a>
+                            <a href="#">
+                              <span style="color: var(--red);">Block account</span>
+                            </a>
+                          </div>
+                        </div>
+
+                      </div>
+                      
                       <p class="lh-text-paragraph">
                         Blue eyes, long legs, shorter patience for broke men. Three
                         ex-husbands, zero regrets. Seeks wealthy gentleman who knows
@@ -209,7 +275,7 @@
                 <div class="lh-message-header">
                   <div class="left">
                     <p class="lh-text-small">From</p>
-                    <h4 class="lh-sub-title">Patricia</h4>
+                    <h4 class="lh-sub-title">Samantha</h4>
                   </div>
                   <div class="right">
                     <p class="lh-text-small">12, June 2025</p>
@@ -221,7 +287,77 @@
                   </div>
                 </div>
                 <div class="lh-message-body">
-                  <h4>Patricia, 46, F semi-retired gold digger</h4>
+                  <div class="d-flex">
+                    <h4>Samantha, 46, F semi-retired gold digger</h4>
+
+                    <div class="lh-mini-dropdown-wrapper">
+                      <div role="button" class="lh-mini-dropdown-btn">
+                        <img
+                          src="assets/icons/ellipsis.svg"
+                          class="lh-small-icon"
+                          alt="Share icon"
+                        />
+                      </div>
+      
+                      <div class="lh-mini-dropdown">
+                        <a href="#">
+                          <span style="color: var(--red);">Report message</span>
+                        </a>
+                        <a href="#">
+                          <span style="color: var(--red);">Block account</span>
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+                  <p class="lh-text-paragraph">
+                    Blue eyes, long legs, shorter patience for broke men. Three
+                    ex-husbands, zero regrets. Seeks wealthy gentleman who knows
+                    investments appreciate. GSOH about prenups. BOX No. 8888.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Message body -->
+              <div class="lh-message-card">
+                <div class="lh-message-header">
+                  <div class="left">
+                    <p class="lh-text-small">From</p>
+                    <h4 class="lh-sub-title">Andrea</h4>
+                  </div>
+                  <div class="right">
+                    <p class="lh-text-small">12, June 2025</p>
+                    <img
+                      style="width: 24px"
+                      src="assets/icons/heart-fill-50.svg"
+                      alt="Heart fill progress"
+                    />
+                  </div>
+                </div>
+                <div class="lh-message-body">
+                  <div class="d-flex">
+                    <h4>Andrea, 46, F semi-retired gold digger</h4>
+
+                    <div class="lh-mini-dropdown-wrapper">
+                      <div role="button" class="lh-mini-dropdown-btn">
+                        <img
+                          src="assets/icons/ellipsis.svg"
+                          class="lh-small-icon"
+                          alt="Share icon"
+                        />
+                      </div>
+      
+                      <div class="lh-mini-dropdown">
+                        <a href="#">
+                          <span style="color: var(--red);">Report message</span>
+                        </a>
+                        <a href="#">
+                          <span style="color: var(--red);">Block account</span>
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
                   <p class="lh-text-paragraph">
                     Blue eyes, long legs, shorter patience for broke men. Three
                     ex-husbands, zero regrets. Seeks wealthy gentleman who knows
@@ -247,7 +383,29 @@
                   </div>
                 </div>
                 <div class="lh-message-body">
-                  <h4>Patricia, 46, F semi-retired gold digger</h4>
+                  <div class="d-flex">
+                    <h4>Patricia, 46, F semi-retired gold digger</h4>
+
+                    <div class="lh-mini-dropdown-wrapper">
+                      <div role="button" class="lh-mini-dropdown-btn">
+                        <img
+                          src="assets/icons/ellipsis.svg"
+                          class="lh-small-icon"
+                          alt="Share icon"
+                        />
+                      </div>
+      
+                      <div class="lh-mini-dropdown">
+                        <a href="#">
+                          <span style="color: var(--red);">Report message</span>
+                        </a>
+                        <a href="#">
+                          <span style="color: var(--red);">Block account</span>
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
                   <p class="lh-text-paragraph">
                     Blue eyes, long legs, shorter patience for broke men. Three
                     ex-husbands, zero regrets. Seeks wealthy gentleman who knows
@@ -273,33 +431,29 @@
                   </div>
                 </div>
                 <div class="lh-message-body">
-                  <h4>Patricia, 46, F semi-retired gold digger</h4>
-                  <p class="lh-text-paragraph">
-                    Blue eyes, long legs, shorter patience for broke men. Three
-                    ex-husbands, zero regrets. Seeks wealthy gentleman who knows
-                    investments appreciate. GSOH about prenups. BOX No. 8888.
-                  </p>
-                </div>
-              </div>
+                  <div class="d-flex">
+                    <h4>Patricia, 46, F semi-retired gold digger</h4>
 
-              <!-- Message body -->
-              <div class="lh-message-card">
-                <div class="lh-message-header">
-                  <div class="left">
-                    <p class="lh-text-small">From</p>
-                    <h4 class="lh-sub-title">Patricia</h4>
+                    <div class="lh-mini-dropdown-wrapper">
+                      <div role="button" class="lh-mini-dropdown-btn">
+                        <img
+                          src="assets/icons/ellipsis.svg"
+                          class="lh-small-icon"
+                          alt="Share icon"
+                        />
+                      </div>
+      
+                      <div class="lh-mini-dropdown">
+                        <a href="#">
+                          <span style="color: var(--red);">Report message</span>
+                        </a>
+                        <a href="#">
+                          <span style="color: var(--red);">Block account</span>
+                        </a>
+                      </div>
+                    </div>
+
                   </div>
-                  <div class="right">
-                    <p class="lh-text-small">12, June 2025</p>
-                    <img
-                      style="width: 24px"
-                      src="assets/icons/heart-fill-50.svg"
-                      alt="Heart fill progress"
-                    />
-                  </div>
-                </div>
-                <div class="lh-message-body">
-                  <h4>Patricia, 46, F semi-retired gold digger</h4>
                   <p class="lh-text-paragraph">
                     Blue eyes, long legs, shorter patience for broke men. Three
                     ex-husbands, zero regrets. Seeks wealthy gentleman who knows
@@ -316,13 +470,6 @@
                       alt="Envelope border icon"
                     />
                     Write a reply
-                  </button>
-                  <button id="ctaButton2" class="lh-button red">
-                    <img
-                      src="assets/icons/info-white.svg"
-                      alt="Envelope border icon"
-                    />
-                    Report this reply
                   </button>
                 </div>
               </div>
@@ -502,6 +649,22 @@
       document.addEventListener("DOMContentLoaded", (e) => {
         envelopeElement.style.display = "block";
         messageContent.style.display = "none";
+      });
+
+      clickAction(".lh-mini-dropdown-btn", (el) => {
+        const wrapper = el.closest(".lh-mini-dropdown-wrapper");
+        const dropdown = wrapper.querySelector(".lh-mini-dropdown");
+        const isAlreadyActive = dropdown.classList.contains("active");
+
+        // Close all dropdowns first
+        document.querySelectorAll(".lh-mini-dropdown").forEach((d) => {
+          d.classList.remove("active");
+        });
+
+        // If it was NOT already active, open it
+        if (!isAlreadyActive) {
+          dropdown.classList.add("active");
+        }
       });
 
       clickAction("#continuePage", (el) => {
